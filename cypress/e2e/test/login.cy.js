@@ -1,5 +1,7 @@
+import LoginPage from '../pages/loginPage'
 describe('User Login Test', () => {
     let userData;
+    const loginPage=new LoginPage();
   
     before(() => {
       // Load user credentials from fixture file
@@ -9,10 +11,8 @@ describe('User Login Test', () => {
     });
   
     it('Should log in with registered user credentials', () => {
-      cy.visit('/login');
-  
-      cy.get('input[placeholder="Enter your username here"]').type(userData.username);
-      cy.get('input[placeholder="Enter your password here"]').type(userData.password);
+      loginPage.visit();
+        loginPage.fillLoginInfo(userData.username,userData.password)
       cy.get('button').contains('Sign In Now').click();
 
       cy.wait(3000); 
