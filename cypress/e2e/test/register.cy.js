@@ -23,7 +23,7 @@ describe('User Registration Test', () => {
     registerPage.visit();
     registerPage.fillRegisterInfo(generatedUsername,Cypress.env('firstName'),Cypress.env('lastName'),generatedEmail,generatedPassword);
   
-      cy.get('button').contains('Register').click();
+      registerPage.clickRegisterButton();
   
       registerPage.verifyRegisterSucess();
     });

@@ -20,5 +20,8 @@ clickRegisterButton(){
 verifyRegisterSucess(){
   cy.url().should('include', '/login');
 };
+clickRegisterButton(){
+  cy.get('button').contains('Register').click(); 
+};
 }
 export default RegisterPage
