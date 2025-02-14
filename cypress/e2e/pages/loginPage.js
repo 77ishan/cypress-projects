@@ -8,10 +8,6 @@ class LoginPage {
     cy.get('input[placeholder="Enter your password here"]').type(password);
   }
 
-  // fillWrongLoginInfo(wrongUsername, wrongPassword) {
-  //   cy.get('input[placeholder="Enter your username here"]').type(wrongUsername);
-  //   cy.get('input[placeholder="Enter your password here"]').type(wrongPassword);
-  // }
 
   clickSignInButton() {
     cy.get('button').contains('Sign In Now').click();
