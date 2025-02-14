@@ -20,11 +20,11 @@ describe('User Registration Test', () => {
   
     it('Should register a new user successfully', () => {
     
-    cy.visit('/register');
+    registerPage.visit();
     registerPage.fillRegisterInfo(generatedUsername,Cypress.env('firstName'),Cypress.env('lastName'),generatedEmail,generatedPassword);
   
       cy.get('button').contains('Register').click();
   
-      cy.url().should('include', '/login');
+      registerPage.verifyRegisterSucess();
     });
   });
